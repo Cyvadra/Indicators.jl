@@ -143,7 +143,7 @@ rsi(x::Array{T}; n::Int64=14, ma::Function=ema, args...)::Array{Float64}
 
 Relative strength index
 """
-function rsi(x::AbstractArray{T}; n::Int64=14, ma::Function=ema, args...)::Array{Float64} where {T<:Real}
+function rsi(x::AbstractArray{T}; n::Int64=14, ma::Function=mma, args...)::Array{Float64} where {T<:Real}
     @assert n<size(x,1) && n>0 "Argument n is out of bounds."
     N = size(x,1)
     ups = zeros(N)
